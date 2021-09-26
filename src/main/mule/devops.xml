@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="b62a9ddc-33f3-4207-ac24-e2e3edced332" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="devopsFlow" doc:id="e37f7acf-0c8d-46b1-8897-d85e34e407da" >
+		<http:listener doc:name="Listener" doc:id="ff20668c-d792-42ed-b2c8-a611f30fc96d" config-ref="HTTP_Listener_config" path="/devops"/>
+		<set-payload value='#["deployed"]' doc:name="Set Payload" doc:id="b8463926-cf49-42e5-836e-786db8b39a28" />
+	</flow>
+</mule>
