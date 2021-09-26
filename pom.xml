@@ -36,6 +36,7 @@
       <username>ramanjamma</username>
       <password>Bchandu@2001</password>
       <applicationName>devopsapplication</applicationName>
+      <objectStoreV2>true</objectStoreV2>
       <environment>Sandbox</environment>
       <workerType>MICRO</workerType>
       <properties>
